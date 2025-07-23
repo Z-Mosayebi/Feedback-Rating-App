@@ -10,6 +10,11 @@
     text: 'This is feedback item 2 coming from the backend',
   },
   {
+    id: 3,
+    rating: 8,
+    text: 'Updated all packages to latest :-)',   
+  },
+  {
     id: 4,
     rating: 6,
     text: 'Updated all packages to latest',   

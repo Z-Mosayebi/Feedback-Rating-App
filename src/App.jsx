@@ -2,23 +2,32 @@ import { useState } from "react";
 import Header from "./components/Header";
 import FeedbackList from "./components/FeedbackList";
 import FeedbackStats from "./components/FeedbackStats";
-import FeedbackData from "./data/feedbackData";
+//import { useEffect } from "react";
+import feedbackData from "./data/feedbackData";
+import FeedbackForm from "./components/FeedbackForm";
 
 function App() {
-  const [feedback, setFeedback] = useState(FeedbackData);
+  //const [feedbacks, setFeedbacks] = useState([]);
+  const [feedback, setFeedback] = useState(feedbackData);
 
   const deleteFeedback = (id) => {
-    if (window.confirm("Are you sure you want to delete?")) {
+    if (window.confirm("Are you sure you want to Delete?")) {
       setFeedback(feedback.filter((item) => item.id !== id));
     }
+    //console.log('App', id)
   };
-
   return (
     <>
       <Header />
       <div className="container">
-        <FeedbackStats feedback={feedback} />
-        <FeedbackList feedback={feedback} handleDelete={deleteFeedback} />
+        <FeedbackForm/>
+         <FeedbackStats feedback={feedback} />
+        <FeedbackList feedback={feedback} handelDelete={deleteFeedback} />
+        
+       
+       
+       
+       
       </div>
     </>
   );
