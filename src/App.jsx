@@ -1,5 +1,5 @@
-
 import { v4 as uuidv4 } from "uuid";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import { useState } from "react";
 import Header from "./components/Header";
 import FeedbackList from "./components/FeedbackList";
@@ -7,6 +7,7 @@ import FeedbackStats from "./components/FeedbackStats";
 //import { useEffect } from "react";
 import feedbackData from "./data/feedbackData";
 import FeedbackForm from "./components/FeedbackForm";
+import AboutPage from "./pages/AboutPage";
 
 function App() {
   //const [feedbacks, setFeedbacks] = useState([]);
@@ -25,14 +26,30 @@ function App() {
     //console.log('App', id)
   };
   return (
-    <>
+    <Router>
       <Header />
       <div className="container">
-        <FeedbackForm handleAdd={addFeedback} />
-        <FeedbackStats feedback={feedback} />
-        <FeedbackList feedback={feedback} handelDelete={deleteFeedback} />
+        <Routes>
+          <Route
+            exact
+            path="/"
+            element={
+              <>
+                <FeedbackForm handleAdd={addFeedback} />
+                <FeedbackStats feedback={feedback} />
+                <FeedbackList
+                  feedback={feedback}
+                  handelDelete={deleteFeedback}
+                />
+              </>
+            }
+          ></Route>
+          {/*<Route path="/about">This is the about route</Route>*/}
+          <Route path="/about" element={<AboutPage />} />
+        </Routes>
+        
       </div>
-    </>
+    </Router>
   );
 }
 
