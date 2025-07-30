@@ -7,6 +7,7 @@ import FeedbackStats from "./components/FeedbackStats";
 //import { useEffect } from "react";
 import feedbackData from "./data/feedbackData";
 import FeedbackForm from "./components/FeedbackForm";
+import AboutIconLink from "./components/AboutIconLink";
 import AboutPage from "./pages/AboutPage";
 
 function App() {
@@ -47,7 +48,7 @@ function App() {
           {/*<Route path="/about">This is the about route</Route>*/}
           <Route path="/about" element={<AboutPage />} />
         </Routes>
-        
+        <AboutIconLink />
       </div>
     </Router>
   );
