@@ -51,7 +51,8 @@ export const FeedbackProvider = ({ children }) => {
         feedback,
         deleteFeedback,
         addFeedback,
-        editFeedback
+        editFeedback, //thi is a function that run when click on them 
+        feedbackEdit , //It is a actual pice of  Steate that whols the item and the boolean 
       }}
     >
       {children}
