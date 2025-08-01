@@ -45,6 +45,12 @@ export const FeedbackProvider = ({ children }) => {
     })
   }
 
+ const updateFeedback = (id, upItem) => {
+  setFeedback(
+    feedback.map((item)=> (item.id === id? {...item, ...upItem} : item))
+  )
+ }
+
   return (
     <FeedbackContext.Provider
       value={{
@@ -53,6 +59,7 @@ export const FeedbackProvider = ({ children }) => {
         addFeedback,
         editFeedback, //thi is a function that run when click on them 
         feedbackEdit , //It is a actual pice of  Steate that whols the item and the boolean 
+        updateFeedback,
       }}
     >
       {children}
