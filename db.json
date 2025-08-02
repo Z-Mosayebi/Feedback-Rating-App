@@ -19,6 +19,11 @@
       "id": "51f4",
       "rating": 7,
       "text": "text postman"
+    },
+    {
+      "id": "fec1",
+      "text": "befor I added response  with post method all of rating that added here do not push to backend.",
+      "rating": 6
     }
   ]
 }
