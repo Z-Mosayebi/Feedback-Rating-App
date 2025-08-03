@@ -10,6 +10,11 @@ import AboutPage from "./pages/AboutPage";
 
 import { FeedbackProvider } from "./context/FeedbackContext.jsx";
 
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
+
+
 function App() {
   return (
     <FeedbackProvider>
@@ -33,6 +38,7 @@ function App() {
           </Routes>
 
           <AboutIconLink />
+          <ToastContainer position="top-right" autoClose={2000} />
         </div>
       </Router>
     </FeedbackProvider>

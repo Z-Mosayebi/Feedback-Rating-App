@@ -49,7 +49,7 @@ function FeedbackForm() {
       };
 
       if (feedbackEdit.edit === true) {
-        updateFeedback(feedbackEdit.item.id, newFeedback);
+        updateFeedback(feedbackEdit.item._id, newFeedback);
       } else {
         addFeedback(newFeedback);
       }
