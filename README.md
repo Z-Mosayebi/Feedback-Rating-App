@@ -1,6 +1,6 @@
 # ⭐ Feedback Rating App (MongoDB + Express + React + Vite)
 
-A professional full-stack feedback app for collecting and managing user feedback with ratings. Built using **React + Vite** on the frontend and **Express + MongoDB Atlas** on the backend. Fully supports real-time CRUD operations and live backend integration.
+A full-stack feedback app for collecting and managing user feedback with ratings. Built using **React + Vite** on the frontend and **Express + MongoDB Atlas** on the backend. Fully supports real-time CRUD operations and live backend integration.
 
 ---
 
@@ -10,7 +10,7 @@ A professional full-stack feedback app for collecting and managing user feedback
 
 ---
 
-##  Features
+## Features
 
 - ✅ Add, update, and delete feedback
 - ✅ Real-time update without page reload
@@ -28,19 +28,19 @@ A professional full-stack feedback app for collecting and managing user feedback
 
 ## 🧱 Tech Stack
 
-| Tech                | Purpose                                   |
-|---------------------|--------------------------------------------|
-| **React**           | UI library for building components         |
-| **Vite**            | Fast development server and bundler       |
-| **React Router**    | Routing and page navigation                |
-| **Context API**     | Manage global feedback state               |
-| **Express**         | REST API backend                          |
-| **MongoDB Atlas**   | Cloud database for persistent feedback     |
-| **Mongoose**        | ODM to interact with MongoDB               |
-| **React Toastify**  | Toast feedback on actions                  |
-| **Concurrently**    | Run frontend and backend with one command  |
-| **VS Code**         | Code editor                               |
-| **Git + GitHub**    | Version control and source hosting         |
+| Tech               | Purpose                                   |
+| ------------------ | ----------------------------------------- |
+| **React**          | UI library for building components        |
+| **Vite**           | Fast development server and bundler       |
+| **React Router**   | Routing and page navigation               |
+| **Context API**    | Manage global feedback state              |
+| **Express**        | REST API backend                          |
+| **MongoDB Atlas**  | Cloud database for persistent feedback    |
+| **Mongoose**       | ODM to interact with MongoDB              |
+| **React Toastify** | Toast feedback on actions                 |
+| **Concurrently**   | Run frontend and backend with one command |
+| **VS Code**        | Code editor                               |
+| **Git + GitHub**   | Version control and source hosting        |
 
 ---
 
@@ -76,16 +76,19 @@ git clone https://github.com/Z-Mosayebi/Feedback-Rating-App
 cd feedback-rating-app
 npm install
 ```
+
 ### 2. Configure Environment
 
 Create two `.env` files:
 
 #### ➤ For frontend (`.env`):
+
 ```env
 VITE_API_URL=/api/feedback
 ```
 
 #### ➤ For backend (`feedback-api/.env`):
+
 ```env
 MONGO_URI=your-mongodb-uri
 PORT=5000
@@ -94,6 +97,7 @@ PORT=5000
 Replace `your-mongodb-uri` with your connection string from MongoDB Atlas.
 
 ---
+
 ### 3. Run the Project Locally
 
 ```bash
@@ -101,6 +105,7 @@ npm run dev
 ```
 
 This runs:
+
 - Frontend (Vite) at `http://localhost:3000`
 - Backend (Express + MongoDB) at `http://localhost:5000`
 
@@ -108,12 +113,7 @@ Vite will proxy API requests to the backend automatically.
 
 ---
 
-
-
-
-
-
-##  What I Learned
+## What I Learned
 
 - React fundamentals: components, props, state
 - State sharing through Context API
