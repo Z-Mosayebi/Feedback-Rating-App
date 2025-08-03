@@ -19,6 +19,11 @@
       "id": "fec1",
       "text": "befor I added response  with post method all of rating that added here do not push to backend.",
       "rating": 6
+    },
+    {
+      "text": "Is it the data I am adding in both UI and Server.I am also Update it. ",
+      "rating": 10,
+      "id": "c73a"
     }
   ]
 }
