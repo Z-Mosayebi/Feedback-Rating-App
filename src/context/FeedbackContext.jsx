@@ -39,13 +39,17 @@ const FetchFeedback = async()=>{
 
     setFeedback([data, ...feedback]);
   };
-
-  const deleteFeedback = (id) => {
+ 
+  //Delete feedback
+  const deleteFeedback = async(id) => {
     if (window.confirm("Are you sure you want to Delete?")) {
+       await fetch(`/feedback/${id}`, {method:'DELETE'})
+
       setFeedback(feedback.filter((item) => item.id !== id));
     }
   };
 
+  //Edit feedback
   const editFeedback = (item) =>{
     setFeedbackEdit({
       item,
