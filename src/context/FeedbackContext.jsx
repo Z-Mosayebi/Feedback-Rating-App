@@ -3,7 +3,7 @@ import { createContext, useState , useEffect} from "react";
 const FeedbackContext = createContext();
 
 export const FeedbackProvider = ({ children }) => {
-  const [setLoading, setIsLoading] = useState(true)
+  const [IsLoading, setIsLoading] = useState(true)
 
   const [feedback, setFeedback] = useState([]);
 
@@ -13,13 +13,18 @@ export const FeedbackProvider = ({ children }) => {
   })
 
  useEffect(()=>{
-  FetchFeedback()
+  FetchFeedback() 
  },[])
+
+const API_URL = import.meta.env.VITE_API_URL;
 
 // FetchFeedback 
 const FetchFeedback = async()=>{
- const response = await fetch (`/feedback?_sort=id&_order=desc`)
+ const response = await fetch (`${API_URL}?_sort=id&_order=desc`)
  const data = await response.json()
+
+ console.log("Fetching from:", `${API_URL}?_sort=id&_order=desc`)
+
 
  setFeedback(data)
  setIsLoading(false)
@@ -27,7 +32,7 @@ const FetchFeedback = async()=>{
 
   //Add Feedback
   const addFeedback = async (newFeedback) => {
-   const response = await fetch('/feedback',{
+   const response = await fetch(API_URL,{
     method: 'Post',
     headers:{
       'Content-Type':'application/json'
@@ -43,7 +48,7 @@ const FetchFeedback = async()=>{
   //Delete feedback
   const deleteFeedback = async(id) => {
     if (window.confirm("Are you sure you want to Delete?")) {
-       await fetch(`/feedback/${id}`, {method:'DELETE'})
+       await fetch(`${API_URL}/${id}`, {method:'DELETE'})
 
       setFeedback(feedback.filter((item) => item.id !== id));
     }
@@ -58,7 +63,7 @@ const FetchFeedback = async()=>{
   }
 //Update feedback
  const updateFeedback =async (id, upItem) => {
-  const response = await fetch (`/feedback/${id}`,{
+  const response = await fetch (`${API_URL}/${id}`,{
     method:'PUT',
     headers:{
       'Content-Type':'application/json',

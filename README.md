@@ -21,6 +21,7 @@ A simple yet complete React app for collecting and managing user feedback with r
 - ✅ JSON Server as a mock REST API
 - ✅ Development proxy configuration
 - ✅ Simultaneous frontend/backend startup using `concurrently`
+- ✅ Flexible configuration using `.env` files
 
 ---
 
@@ -76,15 +77,37 @@ cd feedback-rating-app
 npm install
 ```
 
-### 2. Start both Frontend & Backend
+### 2. Run the Project
 
 This project uses [`concurrently`](https://www.npmjs.com/package/concurrently) to run the React app and JSON Server at the same time with a single command:
+
+ You can either use a local JSON Server OR connect to a live backend (like Render).
+
+#### ▶️ Option A: Local development (with local db.json)
 
 ```bash
 npm start
 ```
 
-#### 🔧 Under the hood:
+This runs both:
+
+- Vite frontend on `localhost:3000`
+- JSON Server backend on `localhost:5000`
+
+#### ▶️ Option B: Connect to live backend (Render)
+1. Create a file called `.env.local` in the project root:
+
+```env
+VITE_API_URL=https://your-render-backend.onrender.com/feedback
+```
+
+2. Then run:
+```bash
+npm run dev
+```
+
+
+###  Scripts (package.json)
 
 ```json
 "scripts": {
@@ -94,21 +117,9 @@ npm start
 }
 ```
 
-#### 🔗 Proxy setup (in vite.config.js):
 
-To handle CORS, the `vite.config.js` file includes a proxy for API requests to the backend:
 
-```js
-server: {
-  proxy: {
-    '/feedback': 'http://localhost:5000'
-  }
-}
-```
-
----
-
-## 🧠 What I Learned
+##  What I Learned
 
 - React fundamentals: components, props, state
 - State sharing through Context API
